@@ -17,8 +17,8 @@ class CommunicationServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/communication.php', 'communication');
 
         $this->app->bind(SmsService::class);
-        $this->app->bind(WhatsappService::class);
-        $this->app->bind(TelegramService::class);
+        // $this->app->bind(WhatsappService::class);
+        // $this->app->bind(TelegramService::class);
         $this->app->bind(DiscordService::class);
     }
 
