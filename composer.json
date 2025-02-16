@@ -1,5 +1,5 @@
 {
-    "name": "yossef-ashraf/quickcommunication",
+    "name": "quick/quickcommunication",
     "description": "Comprehensive multi-channel communication package",
     "type": "library",
     "require": {
