@@ -9,6 +9,7 @@
         "twilio/sdk": "^7.4",
         "symfony/mailer": "^6.3"
     },
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Communication\\": "/"
@@ -28,3 +29,5 @@
         }
     }
 }
+
+
