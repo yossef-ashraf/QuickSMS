@@ -1,5 +1,5 @@
 {
-    "name": "quick/quickcommunication",
+    "name": "send/quickcommunication",
     "description": "Comprehensive multi-channel communication package",
     "type": "library",
     "require": {
