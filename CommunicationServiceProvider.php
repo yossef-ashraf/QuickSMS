@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Communication;
 
@@ -24,8 +24,11 @@ class CommunicationServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/communication.php' => config_path('communication.php'),
-        ], 'communication-config');
+        // نشر ملف config/communication.php تلقائيًا
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/communication.php' => config_path('communication.php'),
+            ], 'communication-config');
+        }
     }
 }

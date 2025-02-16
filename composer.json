@@ -18,6 +18,12 @@
         "laravel": {
             "providers": [
                 "Communication\\CommunicationServiceProvider"
+            ],
+            "publish": [
+                {
+                    "tag": "communication-config",
+                    "path": "config/communication.php"
+                }
             ]
         }
     }
