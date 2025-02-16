@@ -2,7 +2,7 @@
 
 ## Installation
 ```bash
-composer require helper/communication
+composer require quick/communication
 ```
 
 ## Configuration
