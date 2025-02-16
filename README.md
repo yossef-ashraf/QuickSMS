@@ -2,7 +2,7 @@
 
 ## Installation
 ```bash
-composer require fabrikar/communication
+composer require helper/communication
 ```
 
 ## Configuration
