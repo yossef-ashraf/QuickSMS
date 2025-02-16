@@ -1,6 +1,6 @@
 <?php
 
-namespace Fabrikar\Communication\Traits;
+namespace Communication\Traits;
 
 trait ResponseTrait
 {

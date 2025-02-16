@@ -1,9 +1,9 @@
 <?php
 
-namespace Fabrikar\Communication\Services;
+namespace Communication\Services;
 
-use Fabrikar\Communication\Contracts\CommunicationInterface;
-use Fabrikar\Communication\Traits\ResponseTrait;
+use Communication\Contracts\CommunicationInterface;
+use Communication\Traits\ResponseTrait;
 use Twilio\Rest\Client;
 use Illuminate\Support\Facades\Validator;
 

@@ -14,7 +14,7 @@ php artisan vendor:publish --tag=communication-config
 
 ### SMS
 ```php
-use Fabrikar\Communication\Services\SmsService;
+use Communication\Services\SmsService;
 
 $smsService = new SmsService();
 $result = $smsService->send([
@@ -26,7 +26,7 @@ $result = $smsService->send([
 
 ### Whatsapp
 ```php
-use Fabrikar\Communication\Services\WhatsappService;
+use Communication\Services\WhatsappService;
 
 $whatsappService = new WhatsappService();
 $result = $whatsappService->send([
@@ -37,7 +37,7 @@ $result = $whatsappService->send([
 
 ### Telegram
 ```php
-use Fabrikar\Communication\Services\TelegramService;
+use Communication\Services\TelegramService;
 
 $telegramService = new TelegramService();
 $result = $telegramService->send([
@@ -45,7 +45,7 @@ $result = $telegramService->send([
     'message' => 'Hello'
 ]);
 ```
-use Fabrikar\Communication\Services\DiscordService;
+use Communication\Services\DiscordService;
 
 $discordService = new DiscordService();
 $result = $discordService->send([

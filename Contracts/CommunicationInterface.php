@@ -1,6 +1,6 @@
 <?php
 
-namespace Fabrikar\Communication\Contracts;
+namespace Communication\Contracts;
 
 interface CommunicationInterface
 {

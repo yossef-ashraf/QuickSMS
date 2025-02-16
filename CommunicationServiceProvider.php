@@ -1,9 +1,9 @@
 <?php
 
-namespace Fabrikar\Communication;
+namespace Communication;
 
 use Illuminate\Support\ServiceProvider;
-use Fabrikar\Communication\Services\{
+use Communication\Services\{
     SmsService,
     WhatsappService,
     TelegramService,

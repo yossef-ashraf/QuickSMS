@@ -1,6 +1,6 @@
 <?php
 
-namespace Fabrikar\Communication\Exceptions;
+namespace Communication\Exceptions;
 
 use Exception;
 use Throwable;

@@ -1,5 +1,5 @@
 {
-    "name": "fabrikar/communication",
+    "name": "helper/communication",
     "description": "Comprehensive multi-channel communication package",
     "type": "library",
     "require": {
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Fabrikar\\Communication\\": "src/"
+            "Communication\\": "/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Fabrikar\\Communication\\CommunicationServiceProvider"
+                "Communication\\CommunicationServiceProvider"
             ]
         }
     }
