@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Communication;
 
@@ -14,7 +14,8 @@ class CommunicationServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'config/communication.php', 'communication');
+        // Correct the file path to include the directory separator
+        $this->mergeConfigFrom(__DIR__.'/config/communication.php', 'communication'); // Updated line
 
         $this->app->bind(SmsService::class);
         // $this->app->bind(WhatsappService::class);
@@ -24,10 +25,10 @@ class CommunicationServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // نشر ملف config/communication.php تلقائيًا
+        // Publish the config file when the application is running in the console
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'config/communication.php' => config_path('communication.php'),
+                __DIR__.'/config/communication.php' => config_path('communication.php'), // Updated line
             ], 'communication-config');
         }
     }
