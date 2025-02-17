@@ -14,7 +14,7 @@ class CommunicationServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/communication.php', 'communication');
+        $this->mergeConfigFrom(__DIR__.'config/communication.php', 'communication');
 
         $this->app->bind(SmsService::class);
         // $this->app->bind(WhatsappService::class);
@@ -27,7 +27,7 @@ class CommunicationServiceProvider extends ServiceProvider
         // نشر ملف config/communication.php تلقائيًا
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/communication.php' => config_path('communication.php'),
+                __DIR__.'config/communication.php' => config_path('communication.php'),
             ], 'communication-config');
         }
     }
