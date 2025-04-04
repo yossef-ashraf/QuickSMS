@@ -103,6 +103,7 @@ All methods return a standardized response array:
 ## 📜 License
 MIT Licensed
 
----
 
-This README matches exactly with your `composer.json` specifications and maintains all the functionality you originally implemented. The package name, namespace (`QuickSMS`), and all configuration keys are consistent with your package structure.
+Best regards,  
+[Yossef Ashraf](https://github.com/yossef-ashraf)
+
