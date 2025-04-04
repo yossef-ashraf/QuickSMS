@@ -68,26 +68,6 @@ $smsService->send([
 
 ```
 
-### Sending SMS
-```php
-use QuickSMS\Facades\QuickSMS;
-
-$response = QuickSMS::send([
-    'phone' => '+2010000000',
-    'message' => 'Your verification code is 1234',
-    'provider' => 'cequens', // optional (uses default if not provided)
-    'type' => 'sms' // or 'otp' (optional)
-]);
-```
-
-### Sending OTP
-```php
-$response = QuickSMS::sendOtp([
-    'phone' => '+2010000000',
-    'message' => '1234', // The OTP code
-    'provider' => 'smsmisr' // optional
-]);
-```
 
 ## 🔍 Response Structure
 All methods return a standardized response array:
