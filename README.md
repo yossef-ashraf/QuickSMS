@@ -52,7 +52,7 @@ use QuickSMS\Validators\SmsValidator;
 
 $smsService = new SmsService(new SmsValidator());
 $result = $smsService->send([
-    'phone' => '+201012345678',
+    'phone' => '+2010000000',
     'message' => 'Test message',
     'provider' => 'cequens',
     'type' => 'sms'
@@ -73,7 +73,7 @@ $smsService->send([
 use QuickSMS\Facades\QuickSMS;
 
 $response = QuickSMS::send([
-    'phone' => '+201012345678',
+    'phone' => '+2010000000',
     'message' => 'Your verification code is 1234',
     'provider' => 'cequens', // optional (uses default if not provided)
     'type' => 'sms' // or 'otp' (optional)
@@ -83,7 +83,7 @@ $response = QuickSMS::send([
 ### Sending OTP
 ```php
 $response = QuickSMS::sendOtp([
-    'phone' => '+201012345678',
+    'phone' => '+2010000000',
     'message' => '1234', // The OTP code
     'provider' => 'smsmisr' // optional
 ]);
