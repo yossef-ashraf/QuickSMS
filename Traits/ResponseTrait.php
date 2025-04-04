@@ -1,6 +1,6 @@
 <?php
 
-namespace Communication\Traits;
+namespace QuickSMS\Traits;
 
 trait ResponseTrait
 {
