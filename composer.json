@@ -1,33 +1,40 @@
 {
-    "name": "quickhelper/communication",
-    "description": "Comprehensive multi-channel communication package",
+    "name": "quickhelper/quicksms",
+    "description": "Comprehensive multi-channel SMS package for Laravel",
     "type": "library",
+    "license": "MIT",
+    "keywords": ["sms", "laravel", "twilio", "notifications"],
+    "authors": [
+        {
+            "name": "yossef ashraf",
+            "email": "yossefff2001@gmail.com"
+        }
+    ],
     "require": {
         "php": ">=8.2",
         "laravel/framework": ">=10.0",
-        "guzzlehttp/guzzle":">=7.7",
-        "twilio/sdk":">=7.4",
-        "symfony/mailer":">=6.3"
+        "guzzlehttp/guzzle": ">=7.7",
+        "symfony/mailer": ">=6.3"
     },
-    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Communication\\": "/"
+            "QuickSMS\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Communication\\CommunicationServiceProvider"
+                "QuickSMS\\QuickSMSServiceProvider"
             ],
-            "publish": [
-                {
-                    "tag": "communication-config",
-                    "path": "config/communication.php"
-                }
-            ]
+            "aliases": {
+                "QuickSMS": "QuickSMS\\Facades\\QuickSMS"
+            }
         }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan vendor:publish --tag=quicksms-config"
+        ]
     }
 }
-
-
