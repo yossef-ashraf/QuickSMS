@@ -3,7 +3,11 @@
     "description": "Comprehensive multi-channel SMS package for Laravel",
     "type": "library",
     "license": "MIT",
-    "keywords": ["sms", "laravel", "twilio", "notifications"],
+    "keywords": [
+        "sms",
+        "laravel",
+        "twilio"
+    ],
     "authors": [
         {
             "name": "yossef ashraf",
@@ -14,6 +18,7 @@
         "php": ">=8.2",
         "laravel/framework": ">=10.0",
         "guzzlehttp/guzzle": ">=7.7",
+        "twilio/sdk": "^7.4",
         "symfony/mailer": ">=6.3"
     },
     "autoload": {

@@ -32,6 +32,13 @@ return [
             'default_lang' => env('VIKLINK_DEFAULT_LANG', 'E'), // E for English, A for Arabic
             'timeout' => env('VIKLINK_TIMEOUT', 15),
         ],
+        
+        'twilio' => [
+            'sid' => env('TWILIO_SMS_SID'),
+            'token' => env('TWILIO_SMS_TOKEN'),
+            'from' => env('TWILIO_SMS_FROM'),
+            'timeout' => env('TWILIO_SMS_TIMEOUT', 10),
+        ],
     ],
     
     'validation' => [

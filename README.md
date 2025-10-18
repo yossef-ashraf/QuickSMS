@@ -41,16 +41,24 @@ QUICKSMS_VIKLINK_USERNAME=your_username
 QUICKSMS_VIKLINK_PASSWORD=your_password
 QUICKSMS_VIKLINK_SENDER=your_sender_id
 QUICKSMS_VIKLINK_DEFAULT_LANG=E  # E=English, A=Arabic
+
+# Twilio Provider
+TWILIO_SMS_SID=your_twilio_sid
+TWILIO_SMS_TOKEN=your_twilio_token
+TWILIO_SMS_FROM=+1234567890
+TWILIO_SMS_TIMEOUT=10
 ```
 
 ## 🚀 Basic Usage
 
-### Sending 
+### Using SmsService (Multi-Provider)
 ```php
 use QuickSMS\Services\SmsService;
 use QuickSMS\Validators\SmsValidator;
 
 $smsService = new SmsService(new SmsValidator());
+
+// Send SMS via Cequens
 $result = $smsService->send([
     'phone' => '+2010000000',
     'message' => 'Test message',
@@ -58,14 +66,61 @@ $result = $smsService->send([
     'type' => 'sms'
 ]);
 
-$smsService->send([
+// Send OTP via SMS Misr
+$result = $smsService->send([
     'phone' => $phone,
     'message' => $otpCode, 
     'type' => 'otp',
     'provider' => 'smsmisr',
     'template' => env('QUICKSMS_SMSMISR_OTP_TEMPLATE') 
 ]);
+```
 
+### Using TwilioService (Dedicated)
+```php
+use QuickSMS\Services\TwilioService;
+
+$twilioService = new TwilioService();
+$result = $twilioService->send([
+    'phone' => '+201234567890',
+    'message' => 'Hello from Twilio!'
+]);
+
+// Response example:
+// [
+//     'success' => true,
+//     'message' => 'Twilio SMS sent successfully',
+//     'data' => [
+//         'sid' => 'SM1234567890abcdef',
+//         'status' => 'queued'
+//     ]
+// ]
+```
+
+### Dependency Injection
+```php
+use QuickSMS\Services\TwilioService;
+
+class NotificationController extends Controller
+{
+    public function __construct(private TwilioService $twilioService)
+    {
+    }
+
+    public function sendSMS()
+    {
+        $result = $this->twilioService->send([
+            'phone' => '+201234567890',
+            'message' => 'Your verification code is: 123456'
+        ]);
+
+        if ($result['success']) {
+            return response()->json(['message' => 'SMS sent successfully']);
+        }
+
+        return response()->json(['error' => $result['message']], 400);
+    }
+}
 ```
 
 
